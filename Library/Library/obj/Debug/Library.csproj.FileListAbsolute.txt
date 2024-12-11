@@ -1,0 +1,48 @@
+C:\Users\JUSTINE MADERAZO\source\repos\Library\Library\bin\Debug\Library.exe.config
+C:\Users\JUSTINE MADERAZO\source\repos\Library\Library\bin\Debug\Library.exe
+C:\Users\JUSTINE MADERAZO\source\repos\Library\Library\bin\Debug\Library.pdb
+C:\Users\JUSTINE MADERAZO\source\repos\Library\Library\obj\Debug\Library.csproj.AssemblyReference.cache
+C:\Users\JUSTINE MADERAZO\source\repos\Library\Library\obj\Debug\Library.Form1.resources
+C:\Users\JUSTINE MADERAZO\source\repos\Library\Library\obj\Debug\Library.Properties.Resources.resources
+C:\Users\JUSTINE MADERAZO\source\repos\Library\Library\obj\Debug\Library.csproj.GenerateResource.cache
+C:\Users\JUSTINE MADERAZO\source\repos\Library\Library\obj\Debug\Library.csproj.CoreCompileInputs.cache
+C:\Users\JUSTINE MADERAZO\source\repos\Library\Library\obj\Debug\Library.exe
+C:\Users\JUSTINE MADERAZO\source\repos\Library\Library\obj\Debug\Library.pdb
+C:\Users\JUSTINE MADERAZO\source\repos\Library\Library\obj\Debug\Library.LoginForm.resources
+C:\Users\JUSTINE MADERAZO\source\repos\Library\Library\obj\Debug\Library.RegisterForm.resources
+C:\Users\JUSTINE MADERAZO\source\repos\Library\Library\bin\Debug\library.mdf
+C:\Users\JUSTINE MADERAZO\source\repos\Library\Library\bin\Debug\library_log.ldf
+C:\Users\JUSTINE MADERAZO\source\repos\Library\Library\obj\Debug\Library.adminForm.resources
+C:\Users\JUSTINE MADERAZO\source\repos\Library\Library\obj\Debug\Library.dashboard.resources
+C:\Users\JUSTINE MADERAZO\source\repos\Library\Library\obj\Debug\Library.librarianform.resources
+C:\Users\JUSTINE MADERAZO\source\repos\Library\Library\obj\Debug\Library.librarian_borrowed.resources
+C:\Users\JUSTINE MADERAZO\source\repos\Library\Library\obj\Debug\Library.requestedBooks.resources
+C:\Users\JUSTINE MADERAZO\source\repos\Library\Library\obj\Debug\Library.userdashboard.resources
+C:\Users\JUSTINE MADERAZO\source\repos\Library\Library\obj\Debug\Library.addBooks.resources
+C:\Users\JUSTINE MADERAZO\source\repos\Library\Library\obj\Debug\Library.locationForm.resources
+C:\Users\JUSTINE MADERAZO\source\repos\Library\Library\obj\Debug\Library.userbook.resources
+C:\Users\JUSTINE MADERAZO\source\repos\Library\Library\obj\Debug\Library.RequestedUserBooks.resources
+C:\Users\renzj\source\repos\Library\Library\bin\Debug\library.mdf
+C:\Users\renzj\source\repos\Library\Library\bin\Debug\library_log.ldf
+C:\Users\renzj\source\repos\Library\Library\bin\Debug\Library.exe.config
+C:\Users\renzj\source\repos\Library\Library\bin\Debug\Library.exe
+C:\Users\renzj\source\repos\Library\Library\bin\Debug\Library.pdb
+C:\Users\renzj\source\repos\Library\Library\obj\Debug\Library.csproj.AssemblyReference.cache
+C:\Users\renzj\source\repos\Library\Library\obj\Debug\Library.addBooks.resources
+C:\Users\renzj\source\repos\Library\Library\obj\Debug\Library.adminForm.resources
+C:\Users\renzj\source\repos\Library\Library\obj\Debug\Library.dashboard.resources
+C:\Users\renzj\source\repos\Library\Library\obj\Debug\Library.Form1.resources
+C:\Users\renzj\source\repos\Library\Library\obj\Debug\Library.librarianform.resources
+C:\Users\renzj\source\repos\Library\Library\obj\Debug\Library.locationForm.resources
+C:\Users\renzj\source\repos\Library\Library\obj\Debug\Library.LoginForm.resources
+C:\Users\renzj\source\repos\Library\Library\obj\Debug\Library.Properties.Resources.resources
+C:\Users\renzj\source\repos\Library\Library\obj\Debug\Library.RegisterForm.resources
+C:\Users\renzj\source\repos\Library\Library\obj\Debug\Library.librarian_borrowed.resources
+C:\Users\renzj\source\repos\Library\Library\obj\Debug\Library.requestedBooks.resources
+C:\Users\renzj\source\repos\Library\Library\obj\Debug\Library.RequestedUserBooks.resources
+C:\Users\renzj\source\repos\Library\Library\obj\Debug\Library.userbook.resources
+C:\Users\renzj\source\repos\Library\Library\obj\Debug\Library.userdashboard.resources
+C:\Users\renzj\source\repos\Library\Library\obj\Debug\Library.csproj.GenerateResource.cache
+C:\Users\renzj\source\repos\Library\Library\obj\Debug\Library.csproj.CoreCompileInputs.cache
+C:\Users\renzj\source\repos\Library\Library\obj\Debug\Library.exe
+C:\Users\renzj\source\repos\Library\Library\obj\Debug\Library.pdb

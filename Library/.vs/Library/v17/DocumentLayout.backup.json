@@ -1,0 +1,333 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\renzj\\source\\repos\\Library\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{99CFF267-EB29-44B1-8BC2-B1BB17CBF3CD}|Library\\Library.csproj|c:\\users\\renzj\\source\\repos\\library\\library\\addbooks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99CFF267-EB29-44B1-8BC2-B1BB17CBF3CD}|Library\\Library.csproj|solutionrelative:library\\addbooks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99CFF267-EB29-44B1-8BC2-B1BB17CBF3CD}|Library\\Library.csproj|C:\\Users\\renzj\\source\\repos\\Library\\library\\addbooks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{99CFF267-EB29-44B1-8BC2-B1BB17CBF3CD}|Library\\Library.csproj|solutionrelative:library\\addbooks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99CFF267-EB29-44B1-8BC2-B1BB17CBF3CD}|Library\\Library.csproj|C:\\Users\\renzj\\source\\repos\\Library\\library\\addbooks.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99CFF267-EB29-44B1-8BC2-B1BB17CBF3CD}|Library\\Library.csproj|solutionrelative:library\\addbooks.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99CFF267-EB29-44B1-8BC2-B1BB17CBF3CD}|Library\\Library.csproj|C:\\Users\\renzj\\source\\repos\\Library\\library\\librarianform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99CFF267-EB29-44B1-8BC2-B1BB17CBF3CD}|Library\\Library.csproj|solutionrelative:library\\librarianform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99CFF267-EB29-44B1-8BC2-B1BB17CBF3CD}|Library\\Library.csproj|C:\\Users\\renzj\\source\\repos\\Library\\library\\librarianform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{99CFF267-EB29-44B1-8BC2-B1BB17CBF3CD}|Library\\Library.csproj|solutionrelative:library\\librarianform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99CFF267-EB29-44B1-8BC2-B1BB17CBF3CD}|Library\\Library.csproj|C:\\Users\\renzj\\source\\repos\\Library\\library\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99CFF267-EB29-44B1-8BC2-B1BB17CBF3CD}|Library\\Library.csproj|solutionrelative:library\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99CFF267-EB29-44B1-8BC2-B1BB17CBF3CD}|Library\\Library.csproj|C:\\Users\\renzj\\source\\repos\\Library\\library\\locationitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99CFF267-EB29-44B1-8BC2-B1BB17CBF3CD}|Library\\Library.csproj|solutionrelative:library\\locationitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99CFF267-EB29-44B1-8BC2-B1BB17CBF3CD}|Library\\Library.csproj|C:\\Users\\renzj\\source\\repos\\Library\\library\\session.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99CFF267-EB29-44B1-8BC2-B1BB17CBF3CD}|Library\\Library.csproj|solutionrelative:library\\session.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99CFF267-EB29-44B1-8BC2-B1BB17CBF3CD}|Library\\Library.csproj|C:\\Users\\renzj\\source\\repos\\Library\\library\\properties\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99CFF267-EB29-44B1-8BC2-B1BB17CBF3CD}|Library\\Library.csproj|solutionrelative:library\\properties\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99CFF267-EB29-44B1-8BC2-B1BB17CBF3CD}|Library\\Library.csproj|C:\\Users\\renzj\\source\\repos\\Library\\library\\bookadd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99CFF267-EB29-44B1-8BC2-B1BB17CBF3CD}|Library\\Library.csproj|solutionrelative:library\\bookadd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99CFF267-EB29-44B1-8BC2-B1BB17CBF3CD}|Library\\Library.csproj|C:\\Users\\renzj\\source\\repos\\Library\\library\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{99CFF267-EB29-44B1-8BC2-B1BB17CBF3CD}|Library\\Library.csproj|solutionrelative:library\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99CFF267-EB29-44B1-8BC2-B1BB17CBF3CD}|Library\\Library.csproj|C:\\Users\\renzj\\source\\repos\\Library\\library\\registerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{99CFF267-EB29-44B1-8BC2-B1BB17CBF3CD}|Library\\Library.csproj|solutionrelative:library\\registerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99CFF267-EB29-44B1-8BC2-B1BB17CBF3CD}|Library\\Library.csproj|C:\\Users\\renzj\\source\\repos\\Library\\library\\locationform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{99CFF267-EB29-44B1-8BC2-B1BB17CBF3CD}|Library\\Library.csproj|solutionrelative:library\\locationform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99CFF267-EB29-44B1-8BC2-B1BB17CBF3CD}|Library\\Library.csproj|C:\\Users\\renzj\\source\\repos\\Library\\library\\librarian_borrowed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{99CFF267-EB29-44B1-8BC2-B1BB17CBF3CD}|Library\\Library.csproj|solutionrelative:library\\librarian_borrowed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99CFF267-EB29-44B1-8BC2-B1BB17CBF3CD}|Library\\Library.csproj|C:\\Users\\renzj\\source\\repos\\Library\\library\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{99CFF267-EB29-44B1-8BC2-B1BB17CBF3CD}|Library\\Library.csproj|solutionrelative:library\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99CFF267-EB29-44B1-8BC2-B1BB17CBF3CD}|Library\\Library.csproj|C:\\Users\\renzj\\source\\repos\\Library\\library\\adminform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{99CFF267-EB29-44B1-8BC2-B1BB17CBF3CD}|Library\\Library.csproj|solutionrelative:library\\adminform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99CFF267-EB29-44B1-8BC2-B1BB17CBF3CD}|Library\\Library.csproj|C:\\Users\\renzj\\source\\repos\\Library\\library\\dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{99CFF267-EB29-44B1-8BC2-B1BB17CBF3CD}|Library\\Library.csproj|solutionrelative:library\\dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99CFF267-EB29-44B1-8BC2-B1BB17CBF3CD}|Library\\Library.csproj|C:\\Users\\renzj\\source\\repos\\Library\\library\\userdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{99CFF267-EB29-44B1-8BC2-B1BB17CBF3CD}|Library\\Library.csproj|solutionrelative:library\\userdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99CFF267-EB29-44B1-8BC2-B1BB17CBF3CD}|Library\\Library.csproj|C:\\Users\\renzj\\source\\repos\\Library\\library\\userbook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{99CFF267-EB29-44B1-8BC2-B1BB17CBF3CD}|Library\\Library.csproj|solutionrelative:library\\userbook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99CFF267-EB29-44B1-8BC2-B1BB17CBF3CD}|Library\\Library.csproj|C:\\Users\\renzj\\source\\repos\\Library\\library\\requestedbooks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{99CFF267-EB29-44B1-8BC2-B1BB17CBF3CD}|Library\\Library.csproj|solutionrelative:library\\requestedbooks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "addBooks.cs",
+              "DocumentMoniker": "C:\\Users\\renzj\\source\\repos\\Library\\Library\\AddBooks.cs",
+              "RelativeDocumentMoniker": "Library\\AddBooks.cs",
+              "ToolTip": "C:\\Users\\renzj\\source\\repos\\Library\\Library\\AddBooks.cs",
+              "RelativeToolTip": "Library\\AddBooks.cs",
+              "ViewState": "AgIAAJ8AAAAAAAAAAAAewLEAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-10T18:43:14.586Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "librarianform.cs",
+              "DocumentMoniker": "C:\\Users\\renzj\\source\\repos\\Library\\Library\\Librarianform.cs",
+              "RelativeDocumentMoniker": "Library\\Librarianform.cs",
+              "ToolTip": "C:\\Users\\renzj\\source\\repos\\Library\\Library\\Librarianform.cs",
+              "RelativeToolTip": "Library\\Librarianform.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-10T18:42:56.074Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Session.cs",
+              "DocumentMoniker": "C:\\Users\\renzj\\source\\repos\\Library\\Library\\Session.cs",
+              "RelativeDocumentMoniker": "Library\\Session.cs",
+              "ToolTip": "C:\\Users\\renzj\\source\\repos\\Library\\Library\\Session.cs",
+              "RelativeToolTip": "Library\\Session.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-10T18:42:11.731Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\renzj\\source\\repos\\Library\\Library\\Program.cs",
+              "RelativeDocumentMoniker": "Library\\Program.cs",
+              "ToolTip": "C:\\Users\\renzj\\source\\repos\\Library\\Library\\Program.cs",
+              "RelativeToolTip": "Library\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-10T18:41:55.135Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "LocationItem.cs",
+              "DocumentMoniker": "C:\\Users\\renzj\\source\\repos\\Library\\Library\\LocationItem.cs",
+              "RelativeDocumentMoniker": "Library\\LocationItem.cs",
+              "ToolTip": "C:\\Users\\renzj\\source\\repos\\Library\\Library\\LocationItem.cs",
+              "RelativeToolTip": "Library\\LocationItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-10T18:41:52.284Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "AssemblyInfo.cs",
+              "DocumentMoniker": "C:\\Users\\renzj\\source\\repos\\Library\\Library\\Properties\\AssemblyInfo.cs",
+              "RelativeDocumentMoniker": "Library\\Properties\\AssemblyInfo.cs",
+              "ToolTip": "C:\\Users\\renzj\\source\\repos\\Library\\Library\\Properties\\AssemblyInfo.cs",
+              "RelativeToolTip": "Library\\Properties\\AssemblyInfo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-10T18:41:39.171Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "addBooks.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\renzj\\source\\repos\\Library\\Library\\AddBooks.Designer.cs",
+              "RelativeDocumentMoniker": "Library\\AddBooks.Designer.cs",
+              "ToolTip": "C:\\Users\\renzj\\source\\repos\\Library\\Library\\AddBooks.Designer.cs",
+              "RelativeToolTip": "Library\\AddBooks.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-10T18:35:53.764Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "librarianform.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\renzj\\source\\repos\\Library\\Library\\Librarianform.cs",
+              "RelativeDocumentMoniker": "Library\\Librarianform.cs",
+              "ToolTip": "C:\\Users\\renzj\\source\\repos\\Library\\Library\\Librarianform.cs [Design]",
+              "RelativeToolTip": "Library\\Librarianform.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-10T14:18:39.568Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "addBooks.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\renzj\\source\\repos\\Library\\Library\\AddBooks.cs",
+              "RelativeDocumentMoniker": "Library\\AddBooks.cs",
+              "ToolTip": "C:\\Users\\renzj\\source\\repos\\Library\\Library\\AddBooks.cs [Design]",
+              "RelativeToolTip": "Library\\AddBooks.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-10T14:15:41.94Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "locationForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\renzj\\source\\repos\\Library\\Library\\LocationForm.cs",
+              "RelativeDocumentMoniker": "Library\\LocationForm.cs",
+              "ToolTip": "C:\\Users\\renzj\\source\\repos\\Library\\Library\\LocationForm.cs [Design]",
+              "RelativeToolTip": "Library\\LocationForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-10T14:18:56.166Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "LoginForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\renzj\\source\\repos\\Library\\Library\\LoginForm.cs",
+              "RelativeDocumentMoniker": "Library\\LoginForm.cs",
+              "ToolTip": "C:\\Users\\renzj\\source\\repos\\Library\\Library\\LoginForm.cs [Design]",
+              "RelativeToolTip": "Library\\LoginForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-10T14:19:34.246Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "bookAdd.cs",
+              "DocumentMoniker": "C:\\Users\\renzj\\source\\repos\\Library\\Library\\bookAdd.cs",
+              "RelativeDocumentMoniker": "Library\\bookAdd.cs",
+              "ToolTip": "C:\\Users\\renzj\\source\\repos\\Library\\Library\\bookAdd.cs",
+              "RelativeToolTip": "Library\\bookAdd.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABAAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T04:44:38.036Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "librarian_borrowed.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\renzj\\source\\repos\\Library\\Library\\Librarian_borrowed.cs",
+              "RelativeDocumentMoniker": "Library\\Librarian_borrowed.cs",
+              "ToolTip": "C:\\Users\\renzj\\source\\repos\\Library\\Library\\Librarian_borrowed.cs [Design]",
+              "RelativeToolTip": "Library\\Librarian_borrowed.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T04:44:31.707Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "RegisterForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\renzj\\source\\repos\\Library\\Library\\RegisterForm.cs",
+              "RelativeDocumentMoniker": "Library\\RegisterForm.cs",
+              "ToolTip": "C:\\Users\\renzj\\source\\repos\\Library\\Library\\RegisterForm.cs [Design]",
+              "RelativeToolTip": "Library\\RegisterForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-10T14:19:40.417Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\renzj\\source\\repos\\Library\\Library\\Form1.cs",
+              "RelativeDocumentMoniker": "Library\\Form1.cs",
+              "ToolTip": "C:\\Users\\renzj\\source\\repos\\Library\\Library\\Form1.cs [Design]",
+              "RelativeToolTip": "Library\\Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T04:35:06.91Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "adminForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\renzj\\source\\repos\\Library\\Library\\AdminForm.cs",
+              "RelativeDocumentMoniker": "Library\\AdminForm.cs",
+              "ToolTip": "C:\\Users\\renzj\\source\\repos\\Library\\Library\\AdminForm.cs [Design]",
+              "RelativeToolTip": "Library\\AdminForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-10T14:43:23.341Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "dashboard.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\renzj\\source\\repos\\Library\\Library\\Dashboard.cs",
+              "RelativeDocumentMoniker": "Library\\Dashboard.cs",
+              "ToolTip": "C:\\Users\\renzj\\source\\repos\\Library\\Library\\Dashboard.cs [Design]",
+              "RelativeToolTip": "Library\\Dashboard.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T04:44:29.053Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "userdashboard.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\renzj\\source\\repos\\Library\\Library\\Userdashboard.cs",
+              "RelativeDocumentMoniker": "Library\\Userdashboard.cs",
+              "ToolTip": "C:\\Users\\renzj\\source\\repos\\Library\\Library\\Userdashboard.cs [Design]",
+              "RelativeToolTip": "Library\\Userdashboard.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-10T14:40:53.748Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "requestedBooks.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\renzj\\source\\repos\\Library\\Library\\RequestedBooks.cs",
+              "RelativeDocumentMoniker": "Library\\RequestedBooks.cs",
+              "ToolTip": "C:\\Users\\renzj\\source\\repos\\Library\\Library\\RequestedBooks.cs [Design]",
+              "RelativeToolTip": "Library\\RequestedBooks.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-10T14:19:46.074Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "userbook.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\renzj\\source\\repos\\Library\\Library\\Userbook.cs",
+              "RelativeDocumentMoniker": "Library\\Userbook.cs",
+              "ToolTip": "C:\\Users\\renzj\\source\\repos\\Library\\Library\\Userbook.cs [Design]",
+              "RelativeToolTip": "Library\\Userbook.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-10T14:21:46.961Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
