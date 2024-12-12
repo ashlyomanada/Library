@@ -13,7 +13,7 @@ namespace Library
 {
     public partial class requestedBooks : UserControl
     {
-        private string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\renzj\source\repos\Library\Library\library.mdf;Integrated Security=True;Connect Timeout=30";
+        private string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=""C:\Users\Ashly Omanada\source\repos\Library\Library\library.mdf"";Integrated Security=True;Connect Timeout=30;Encrypt=False";
         public requestedBooks()
         {
             InitializeComponent();
@@ -47,7 +47,7 @@ namespace Library
         WHERE 
             r.Id = @RequestId";
 
-            using (SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\renzj\source\repos\Library\Library\library.mdf;Integrated Security=True;Connect Timeout=30"))
+            using (SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=""C:\Users\Ashly Omanada\source\repos\Library\Library\library.mdf"";Integrated Security=True;Connect Timeout=30;Encrypt=False"))
             {
                 try
                 {
@@ -93,29 +93,73 @@ namespace Library
             {
                 DataGridViewRow selectedRow = dataGridView1.Rows[e.RowIndex];
 
-                int requestId = Convert.ToInt32(selectedRow.Cells["Id"].Value);  // Get request ID from the row
+                int requestId = Convert.ToInt32(selectedRow.Cells["RequestId"].Value);  // Get request ID from the row
 
                 // Fetch the user and book details from the database using requestId
                 LoadRequestedBookDetails(requestId);
             }
         }
+        //    public void LoadRequestedBooks()
+        //    {
+        //        string query = @"
+        //SELECT 
+        //    requests.Id,
+        //    books.Id as BookId,
+        //    books.Title AS BookTitle, 
+        //    requests.RequestDate, 
+        //    requests.Status,
+        //    requests.ReturnDate,
+        //    users.Username AS RequestedBy
+        //FROM 
+        //    requests requests
+        //INNER JOIN 
+        //    Books books ON requests.BookId = books.Id
+        //INNER JOIN
+        //    Users users ON requests.UserId = users.Id"; // Assuming there is a Users table for usernames
+
+        //        using (SqlConnection con = new SqlConnection(connectionString))
+        //        {
+        //            try
+        //            {
+        //                con.Open();
+        //                using (SqlCommand cmd = new SqlCommand(query, con))
+        //                {
+        //                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+        //                    DataTable dt = new DataTable();
+        //                    da.Fill(dt);
+
+        //                    // Bind data to DataGridView
+        //                    dataGridView1.DataSource = dt;
+
+        //                    // Auto size columns to fill the available space
+        //                    dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+        //                }
+        //            }
+        //            catch (Exception ex)
+        //            {
+        //                MessageBox.Show("Error: " + ex.Message);
+        //            }
+        //        }
+        //    }
+
         public void LoadRequestedBooks()
         {
             string query = @"
-    SELECT 
-        requests.Id,
-        books.Id as BookId,
-        books.Title AS BookTitle, 
-        requests.RequestDate, 
-        requests.Status,
-        requests.ReturnDate,
-        users.Username AS RequestedBy
-    FROM 
-        requests requests
-    INNER JOIN 
-        Books books ON requests.BookId = books.Id
-    INNER JOIN
-        Users users ON requests.UserId = users.Id"; // Assuming there is a Users table for usernames
+SELECT 
+    requests.Id AS RequestId,
+    books.Id AS BookId,
+    books.Title AS BookTitle, 
+    books.quantity AS BookQuantity,
+    requests.RequestDate, 
+    requests.Status,
+    requests.ReturnDate,
+    users.Username AS RequestedBy
+FROM 
+    requests
+INNER JOIN 
+    Books ON requests.BookId = books.Id
+INNER JOIN
+    Users ON requests.UserId = users.Id"; // Assuming there is a Users table for usernames
 
             using (SqlConnection con = new SqlConnection(connectionString))
             {
@@ -131,6 +175,8 @@ namespace Library
                         // Bind data to DataGridView
                         dataGridView1.DataSource = dt;
 
+                      
+
                         // Auto size columns to fill the available space
                         dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                     }
@@ -142,6 +188,7 @@ namespace Library
             }
         }
 
+
         private void button2_Click(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows.Count > 0)
@@ -149,7 +196,7 @@ namespace Library
                 DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
 
                 // Retrieve the Request ID and Book ID from the selected row
-                int requestId = Convert.ToInt32(selectedRow.Cells["Id"].Value);
+                int requestId = Convert.ToInt32(selectedRow.Cells["RequestId"].Value);
                 int bookId = Convert.ToInt32(selectedRow.Cells["BookId"].Value); // Ensure this column exists in your DataGridView
 
                 // Check if the request is already accepted
@@ -233,7 +280,7 @@ namespace Library
                 DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
 
                 // Retrieve the Request ID from the selected row
-                int requestId = Convert.ToInt32(selectedRow.Cells["Id"].Value);
+                int requestId = Convert.ToInt32(selectedRow.Cells["RequestId"].Value);
 
                 // Check if the request is already declined
                 string currentStatus = selectedRow.Cells["Status"].Value.ToString();
@@ -256,34 +303,117 @@ namespace Library
                 MessageBox.Show("Please select a request to decline.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+        //private void DeclineRequest(int requestId, string requestStatus)
+        //{
+        //    string updateRequestQuery = "UPDATE requests SET Status = @RequestStatus WHERE Id = @RequestId";
+
+        //    using (SqlConnection con = new SqlConnection(connectionString))
+        //    {
+        //        try
+        //        {
+        //            con.Open();
+        //            using (SqlCommand cmd = new SqlCommand(updateRequestQuery, con))
+        //            {
+        //                // Update the request status
+        //                cmd.Parameters.AddWithValue("@RequestStatus", requestStatus);
+        //                cmd.Parameters.AddWithValue("@RequestId", requestId);
+        //                cmd.ExecuteNonQuery();
+        //            }
+
+        //            MessageBox.Show("Request has been declined.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        //            // Refresh the DataGridView to reflect changes
+        //            LoadRequestedBooks();
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //        }
+        //    }
+
+
         private void DeclineRequest(int requestId, string requestStatus)
         {
+            // Query to retrieve the bookId and quantity associated with the declined request
+            string getRequestDetailsQuery = @"
+        SELECT BookId, quantity 
+        FROM Requests 
+        WHERE Id = @RequestId";
+
+            // Query to update the request status
             string updateRequestQuery = "UPDATE requests SET Status = @RequestStatus WHERE Id = @RequestId";
+
+            // Query to restore the book quantity
+            string restoreBookQuantityQuery = @"
+        UPDATE Books 
+        SET quantity = ISNULL(quantity, 0) + @RequestQuantity
+        WHERE Id = @BookId";
 
             using (SqlConnection con = new SqlConnection(connectionString))
             {
+                SqlTransaction transaction = null;
+
                 try
                 {
                     con.Open();
-                    using (SqlCommand cmd = new SqlCommand(updateRequestQuery, con))
+                    transaction = con.BeginTransaction();
+
+                    // Step 1: Get the BookId and quantity from the request
+                    int bookId = 0;
+                    int requestQuantity = 0;
+
+                    using (SqlCommand cmd = new SqlCommand(getRequestDetailsQuery, con, transaction))
                     {
-                        // Update the request status
+                        cmd.Parameters.AddWithValue("@RequestId", requestId);
+
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                bookId = reader.GetInt32(reader.GetOrdinal("BookId"));
+                                requestQuantity = reader.GetInt32(reader.GetOrdinal("quantity"));
+                            }
+                        }
+                    }
+
+                    // Step 2: Update the request status to 'Declined'
+                    using (SqlCommand cmd = new SqlCommand(updateRequestQuery, con, transaction))
+                    {
                         cmd.Parameters.AddWithValue("@RequestStatus", requestStatus);
                         cmd.Parameters.AddWithValue("@RequestId", requestId);
                         cmd.ExecuteNonQuery();
                     }
 
-                    MessageBox.Show("Request has been declined.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    // Step 3: Restore the quantity in the Books table
+                    using (SqlCommand cmd = new SqlCommand(restoreBookQuantityQuery, con, transaction))
+                    {
+                        cmd.Parameters.AddWithValue("@RequestQuantity", requestQuantity);
+                        cmd.Parameters.AddWithValue("@BookId", bookId);
+                        cmd.ExecuteNonQuery();
+                    }
+
+                    // Commit the transaction
+                    transaction.Commit();
+
+                    MessageBox.Show("Request has been declined and quantity has been restored.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     // Refresh the DataGridView to reflect changes
                     LoadRequestedBooks();
                 }
                 catch (Exception ex)
                 {
+                    // Rollback the transaction in case of an error
+                    if (transaction != null)
+                    {
+                        transaction.Rollback();
+                    }
+
                     MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
+
+
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {

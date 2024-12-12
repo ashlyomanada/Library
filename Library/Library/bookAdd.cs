@@ -11,7 +11,7 @@ namespace Library
 {
     internal class bookAdd
     {
-        SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\renzj\source\repos\Library\Library\library.mdf;Integrated Security=True;Connect Timeout=30;Encrypt=True");
+        SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=""C:\Users\Ashly Omanada\source\repos\Library\Library\library.mdf"";Integrated Security=True;Connect Timeout=30;Encrypt=True");
         public int ID { get; set; }
         public string Title { get; set; }
         public string Author { get; set; }

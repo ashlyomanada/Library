@@ -13,7 +13,7 @@ namespace Library
 {
     public partial class librarian_borrowed : UserControl
     {
-        private string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\renzj\source\repos\Library\Library\library.mdf;Integrated Security=True;Connect Timeout=30";
+        private string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=""C:\Users\Ashly Omanada\source\repos\Library\Library\library.mdf"";Integrated Security=True;Connect Timeout=30;Encrypt=False";
         public librarian_borrowed()
         {
             InitializeComponent();
@@ -28,6 +28,7 @@ namespace Library
             txtReturnDate.Clear();
             txtUsername.Clear();
             txtStatus.Clear();
+            quantityTxt.Clear();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -44,8 +45,77 @@ namespace Library
                 txtReturnDate.Text = Convert.ToDateTime(selectedRow.Cells["ReturnDate"].Value).ToString("yyyy-MM-dd");
                 txtUsername.Text = selectedRow.Cells["BorrowedBy"].Value.ToString();
                 txtStatus.Text = selectedRow.Cells["Status"].Value.ToString();
+                quantityTxt.Text = selectedRow.Cells["RequestQuantity"].Value.ToString();
             }
         }
+
+
+
+        //    public void LoadBorrowedBooks()
+        //    {
+        //        string query = @"
+        //SELECT 
+        //    books.Id AS BookId,
+        //    requests.Id AS RequestId,
+        //    books.Title AS BookTitle,
+        //    books.Author AS Author,
+        //    requests.RequestDate,
+        //    requests.ReturnDate,
+        //    books.Status,
+        //    users.Username AS BorrowedBy
+        //FROM 
+        //    requests
+        //INNER JOIN 
+        //    Books ON requests.BookId = Books.Id
+        //INNER JOIN 
+        //    Users ON requests.UserId = Users.Id
+        //WHERE 
+        //    books.Status = 'Borrowed' -- Filter for currently borrowed books
+        //    AND requests.Id = (
+        //        SELECT MAX(r.Id)
+        //        FROM requests r
+        //        WHERE r.BookId = books.Id
+        //        AND r.Status IN ('Accepted') -- Modify this based on how you track borrow status
+        //    )
+        //";
+
+        //        using (SqlConnection con = new SqlConnection(connectionString))
+        //        {
+        //            try
+        //            {
+        //                con.Open();
+        //                using (SqlCommand cmd = new SqlCommand(query, con))
+        //                {
+        //                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+        //                    DataTable dt = new DataTable();
+        //                    da.Fill(dt);
+
+        //                    // Bind data to DataGridView
+        //                    dataGridView1.DataSource = dt;
+
+        //                    // Hide the BookId and RequestId columns
+        //                    if (dataGridView1.Columns["BookId"] != null)
+        //                    {
+        //                        dataGridView1.Columns["BookId"].Visible = false;
+        //                    }
+
+        //                    if (dataGridView1.Columns["RequestId"] != null)
+        //                    {
+        //                        dataGridView1.Columns["RequestId"].Visible = false;
+        //                    }
+
+        //                    // Auto-size columns
+        //                    dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+        //                }
+        //            }
+        //            catch (Exception ex)
+        //            {
+        //                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //            }
+        //        }
+        //    }
+
+
         public void LoadBorrowedBooks()
         {
             string query = @"
@@ -56,6 +126,7 @@ SELECT
     books.Author AS Author,
     requests.RequestDate,
     requests.ReturnDate,
+    requests.quantity AS RequestQuantity,
     books.Status,
     users.Username AS BorrowedBy
 FROM 
@@ -72,7 +143,6 @@ WHERE
         WHERE r.BookId = books.Id
         AND r.Status IN ('Accepted') -- Modify this based on how you track borrow status
     )
-
 ";
 
             using (SqlConnection con = new SqlConnection(connectionString))
@@ -89,6 +159,17 @@ WHERE
                         // Bind data to DataGridView
                         dataGridView1.DataSource = dt;
 
+                        // Hide the BookId and RequestId columns
+                        if (dataGridView1.Columns["BookId"] != null)
+                        {
+                            dataGridView1.Columns["BookId"].Visible = false;
+                        }
+
+                        if (dataGridView1.Columns["RequestId"] != null)
+                        {
+                            dataGridView1.Columns["RequestId"].Visible = false;
+                        }
+
                         // Auto-size columns
                         dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                     }
@@ -100,31 +181,75 @@ WHERE
             }
         }
 
+
+
+
         private void button1_Click(object sender, EventArgs e)
         {
-            // Ensure a row is selected
             if (dataGridView1.SelectedRows.Count > 0)
             {
-                // Get the selected row
                 DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
-
-                // Get the book ID (Assuming the ID is in the "BookId" column)
                 int bookId = Convert.ToInt32(selectedRow.Cells["BookId"].Value);
+                int requestQuantity = Convert.ToInt32(selectedRow.Cells["RequestQuantity"].Value);
 
-                // Call the function to update the book's status to "Available"
-                ReturnBook(bookId);
-
-                // Reload the DataGridView to reflect the updated status
+                // Call the ReturnBook method
+                ReturnBook(bookId, requestQuantity);
                 LoadBorrowedBooks();
+                ClearFields();
             }
             else
             {
-                MessageBox.Show("Please select a book to return.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please select a row to return the book.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-        private void ReturnBook(int bookId)
+        //private void ReturnBook(int bookId)
+        //{
+        //    // Transaction to ensure both updates happen together
+        //    using (SqlConnection con = new SqlConnection(connectionString))
+        //    {
+        //        SqlTransaction transaction = null;
+
+        //        try
+        //        {
+        //            con.Open();
+        //            transaction = con.BeginTransaction();
+
+        //            // Update the Books table to set the status to Available
+        //            string updateBookQuery = "UPDATE Books SET Status = 'Available' WHERE Id = @BookId";
+        //            using (SqlCommand cmd = new SqlCommand(updateBookQuery, con, transaction))
+        //            {
+        //                cmd.Parameters.AddWithValue("@BookId", bookId);
+        //                cmd.ExecuteNonQuery();
+        //            }
+
+        //            // Update the Requests table to set the status to Returned
+        //            string updateRequestQuery = "UPDATE Requests SET Status = 'Returned' WHERE BookId = @BookId AND Status = 'Accepted'";
+        //            using (SqlCommand cmd = new SqlCommand(updateRequestQuery, con, transaction))
+        //            {
+        //                cmd.Parameters.AddWithValue("@BookId", bookId);
+        //                cmd.ExecuteNonQuery();
+        //            }
+
+        //            // Commit the transaction
+        //            transaction.Commit();
+
+        //            MessageBox.Show("The book has been returned.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            // Rollback the transaction in case of an error
+        //            if (transaction != null)
+        //            {
+        //                transaction.Rollback();
+        //            }
+
+        //            MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //        }
+        //    }
+
+
+        private void ReturnBook(int bookId, int returnQuantity)
         {
-            // Transaction to ensure both updates happen together
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 SqlTransaction transaction = null;
@@ -134,16 +259,27 @@ WHERE
                     con.Open();
                     transaction = con.BeginTransaction();
 
-                    // Update the Books table to set the status to Available
-                    string updateBookQuery = "UPDATE Books SET Status = 'Available' WHERE Id = @BookId";
+                    // Update the Books table to increment the quantity and set the status to 'Available' if applicable
+                    string updateBookQuery = @"
+                UPDATE Books 
+                SET 
+                    Status = CASE WHEN quantity + @ReturnQuantity > 0 THEN 'Available' ELSE Status END,
+                    quantity = quantity + @ReturnQuantity 
+                WHERE Id = @BookId";
+
                     using (SqlCommand cmd = new SqlCommand(updateBookQuery, con, transaction))
                     {
                         cmd.Parameters.AddWithValue("@BookId", bookId);
+                        cmd.Parameters.AddWithValue("@ReturnQuantity", returnQuantity); // Use the value from the DataGridView
                         cmd.ExecuteNonQuery();
                     }
 
-                    // Update the Requests table to set the status to Returned
-                    string updateRequestQuery = "UPDATE Requests SET Status = 'Returned' WHERE BookId = @BookId AND Status = 'Accepted'";
+                    // Update the Requests table to set the status to 'Returned'
+                    string updateRequestQuery = @"
+                UPDATE Requests 
+                SET Status = 'Returned', ReturnDate = GETDATE()
+                WHERE BookId = @BookId AND Status = 'Accepted'";
+
                     using (SqlCommand cmd = new SqlCommand(updateRequestQuery, con, transaction))
                     {
                         cmd.Parameters.AddWithValue("@BookId", bookId);
@@ -153,7 +289,7 @@ WHERE
                     // Commit the transaction
                     transaction.Commit();
 
-                    MessageBox.Show("The book has been returned.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("The book has been returned and quantity updated.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception ex)
                 {
@@ -167,6 +303,8 @@ WHERE
                 }
             }
         }
+
+
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -231,6 +369,11 @@ WHERE
         private void buttonClear_Click(object sender, EventArgs e)
         {
             ClearFields();
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

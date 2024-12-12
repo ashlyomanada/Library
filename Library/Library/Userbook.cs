@@ -17,13 +17,71 @@ namespace Library
     public partial class userbook : UserControl
     {
         private DataTable bookData; // Store the books data for filtering
-        SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\renzj\source\repos\Library\Library\library.mdf;Integrated Security=True;Connect Timeout=30");
+        SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=""C:\Users\Ashly Omanada\source\repos\Library\Library\library.mdf"";Integrated Security=True;Connect Timeout=30;Encrypt=False");
 
         public userbook()
         {
             InitializeComponent();
             LoadBooks();
         }
+        //    public void LoadBooks()
+        //    {
+        //        try
+        //        {
+        //            if (con.State == ConnectionState.Closed)
+        //            {
+        //                con.Open();
+        //            }
+
+        //            string query = @"
+        //SELECT 
+        //    books.Id,
+        //    books.Title,
+        //    books.Author,
+        //    books.Genre,
+        //    books.Status,
+        //    books.image,
+        //    CONCAT(locations.Section, ' - ', locations.Shelf, ' - Floor ', locations.Floor) AS Location,
+        //    books.date_Insert
+        //FROM 
+        //    books
+        //LEFT JOIN 
+        //    locations
+        //ON 
+        //    books.LocationId = locations.Id
+        //WHERE 
+        //    books.Status = 'Available'
+        //ORDER BY 
+        //    books.date_Insert DESC";
+
+        //            SqlDataAdapter adapter = new SqlDataAdapter(query, con);
+        //            bookData = new DataTable(); // Initialize the DataTable
+        //            adapter.Fill(bookData);
+
+        //            dataGridViewBooks.DataSource = bookData;
+
+        //            if (dataGridViewBooks.Columns["image"] != null)
+        //            {
+        //                dataGridViewBooks.Columns["image"].Visible = false;
+        //            }
+        //            if (dataGridViewBooks.Columns["date_Insert"] != null)
+        //            {
+        //                dataGridViewBooks.Columns["date_Insert"].Visible = false;
+        //            }
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            MessageBox.Show("Error loading books: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //        }
+        //        finally
+        //        {
+        //            if (con.State == ConnectionState.Open)
+        //            {
+        //                con.Close();
+        //            }
+        //        }
+        //    }
+
         public void LoadBooks()
         {
             try
@@ -34,25 +92,26 @@ namespace Library
                 }
 
                 string query = @"
-    SELECT 
-        books.Id,
-        books.Title,
-        books.Author,
-        books.Genre,
-        books.Status,
-        books.image,
-        CONCAT(locations.Section, ' - ', locations.Shelf, ' - Floor ', locations.Floor) AS Location,
-        books.date_Insert
-    FROM 
-        books
-    LEFT JOIN 
-        locations
-    ON 
-        books.LocationId = locations.Id
-    WHERE 
-        books.Status = 'Available'
-    ORDER BY 
-        books.date_Insert DESC";
+SELECT 
+    books.Id,
+    books.Title,
+    books.Author,
+    books.Genre,
+    books.Status,
+    books.image,
+    books.quantity, -- Include the quantity column
+    CONCAT(locations.Section, ' - ', locations.Shelf, ' - Floor ', locations.Floor) AS Location,
+    books.date_Insert
+FROM 
+    books
+LEFT JOIN 
+    locations
+ON 
+    books.LocationId = locations.Id
+WHERE 
+    books.Status = 'Available'
+ORDER BY 
+    books.date_Insert DESC";
 
                 SqlDataAdapter adapter = new SqlDataAdapter(query, con);
                 bookData = new DataTable(); // Initialize the DataTable
@@ -60,10 +119,19 @@ namespace Library
 
                 dataGridViewBooks.DataSource = bookData;
 
+                // Hide the 'Id' column
+                if (dataGridViewBooks.Columns["Id"] != null)
+                {
+                    dataGridViewBooks.Columns["Id"].Visible = false;
+                }
+
+                // Hide the 'image' column
                 if (dataGridViewBooks.Columns["image"] != null)
                 {
                     dataGridViewBooks.Columns["image"].Visible = false;
                 }
+
+                // Hide the 'date_Insert' column
                 if (dataGridViewBooks.Columns["date_Insert"] != null)
                 {
                     dataGridViewBooks.Columns["date_Insert"].Visible = false;
@@ -83,6 +151,7 @@ namespace Library
         }
 
 
+
         private void dataGridViewBooks_CellClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -100,6 +169,7 @@ namespace Library
                 genreTxt.Text = selectedRow.Cells["Genre"].Value?.ToString();
                 statusTxt.Text = selectedRow.Cells["Status"].Value?.ToString();
                 locationTxt.Text = selectedRow.Cells["Location"].Value?.ToString();
+                quantityTxt.Text = selectedRow.Cells["quantity"].Value?.ToString();
 
                 // Load the image if available
                 string imagePath = selectedRow.Cells["image"].Value?.ToString();
@@ -114,6 +184,121 @@ namespace Library
             }
         }
 
+        //private void requestBtn_Click(object sender, EventArgs e)
+        //{
+        //    if (dataGridViewBooks.SelectedRows.Count == 0)
+        //    {
+        //        MessageBox.Show("Please select a book to request.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //        return;
+        //    }
+
+        //    // Get the selected book's ID
+        //    int selectedBookId = Convert.ToInt32(dataGridViewBooks.SelectedRows[0].Cells["Id"].Value);
+
+        //    // Assuming you have a way to get the current user's ID
+        //    int currentUserId = Session.UserId; // Replace this with your logic to retrieve the logged-in user's ID.
+
+        //    string query = "INSERT INTO requests (UserId, BookId) VALUES (@UserId, @BookId)";
+
+        //    try
+        //    {
+        //        if (con.State == ConnectionState.Closed)
+        //        {
+        //            con.Open();
+        //        }
+
+        //        using (SqlCommand cmd = new SqlCommand(query, con))
+        //        {
+        //            cmd.Parameters.AddWithValue("@UserId", currentUserId);
+        //            cmd.Parameters.AddWithValue("@BookId", selectedBookId);
+
+        //            cmd.ExecuteNonQuery();
+
+        //            MessageBox.Show("Request submitted successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show("Error submitting request: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //    }
+        //    finally
+        //    {
+        //        if (con.State == ConnectionState.Open)
+        //        {
+        //            con.Close();
+        //        }
+        //    }
+        //}
+
+        //private void requestBtn_Click(object sender, EventArgs e)
+        //{
+        //    if (dataGridViewBooks.SelectedRows.Count == 0)
+        //    {
+        //        MessageBox.Show("Please select a book to request.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //        return;
+        //    }
+
+        //    // Get the selected book's ID and quantity
+        //    int selectedBookId = Convert.ToInt32(dataGridViewBooks.SelectedRows[0].Cells["Id"].Value);
+        //    int selectedBookQuantity = Convert.ToInt32(dataGridViewBooks.SelectedRows[0].Cells["quantity"].Value);
+
+        //    int quantityRequested = quantityTxt.Text;
+
+        //    // Ensure there is sufficient stock
+        //    if (selectedBookQuantity <= 0)
+        //    {
+        //        MessageBox.Show("The selected book is out of stock.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //        return;
+        //    }
+
+        //    // Assuming you have a way to get the current user's ID
+        //    int currentUserId = Session.UserId; // Replace this with your logic to retrieve the logged-in user's ID.
+
+        //    string insertRequestQuery = "INSERT INTO requests (UserId, BookId) VALUES (@UserId, @BookId)";
+        //    string updateQuantityQuery = "UPDATE books SET quantity = quantity - 1 WHERE Id = @BookId";
+
+        //    try
+        //    {
+        //        if (con.State == ConnectionState.Closed)
+        //        {
+        //            con.Open();
+        //        }
+
+        //        // Insert the request
+        //        using (SqlCommand cmd = new SqlCommand(insertRequestQuery, con))
+        //        {
+        //            cmd.Parameters.AddWithValue("@UserId", currentUserId);
+        //            cmd.Parameters.AddWithValue("@BookId", selectedBookId);
+
+        //            cmd.ExecuteNonQuery();
+        //        }
+
+        //        // Update the quantity
+        //        using (SqlCommand cmd = new SqlCommand(updateQuantityQuery, con))
+        //        {
+        //            cmd.Parameters.AddWithValue("@BookId", selectedBookId);
+
+        //            cmd.ExecuteNonQuery();
+        //        }
+
+        //        MessageBox.Show("Request submitted successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        //        // Refresh the DataGridView to reflect updated quantity
+        //        LoadBooks();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show("Error submitting request: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //    }
+        //    finally
+        //    {
+        //        if (con.State == ConnectionState.Open)
+        //        {
+        //            con.Close();
+        //        }
+        //    }
+        //}
+
         private void requestBtn_Click(object sender, EventArgs e)
         {
             if (dataGridViewBooks.SelectedRows.Count == 0)
@@ -122,13 +307,29 @@ namespace Library
                 return;
             }
 
-            // Get the selected book's ID
+            // Get the selected book's ID and quantity
             int selectedBookId = Convert.ToInt32(dataGridViewBooks.SelectedRows[0].Cells["Id"].Value);
+            int selectedBookQuantity = Convert.ToInt32(dataGridViewBooks.SelectedRows[0].Cells["quantity"].Value);
+
+            // Validate requested quantity
+            if (!int.TryParse(quantityTxt.Text, out int quantityRequested) || quantityRequested <= 0)
+            {
+                MessageBox.Show("Please enter a valid quantity to request.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Ensure there is sufficient stock
+            if (selectedBookQuantity < quantityRequested)
+            {
+                MessageBox.Show("The selected book does not have enough stock to fulfill your request.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             // Assuming you have a way to get the current user's ID
             int currentUserId = Session.UserId; // Replace this with your logic to retrieve the logged-in user's ID.
 
-            string query = "INSERT INTO requests (UserId, BookId) VALUES (@UserId, @BookId)";
+            string insertRequestQuery = "INSERT INTO requests (UserId, BookId, quantity) VALUES (@UserId, @BookId, @Quantity)";
+            string updateQuantityQuery = "UPDATE books SET quantity = quantity - @Quantity WHERE Id = @BookId";
 
             try
             {
@@ -137,15 +338,29 @@ namespace Library
                     con.Open();
                 }
 
-                using (SqlCommand cmd = new SqlCommand(query, con))
+                // Insert the request
+                using (SqlCommand cmd = new SqlCommand(insertRequestQuery, con))
                 {
                     cmd.Parameters.AddWithValue("@UserId", currentUserId);
                     cmd.Parameters.AddWithValue("@BookId", selectedBookId);
+                    cmd.Parameters.AddWithValue("@Quantity", quantityRequested);
 
                     cmd.ExecuteNonQuery();
-
-                    MessageBox.Show("Request submitted successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+
+                // Update the book's quantity
+                using (SqlCommand cmd = new SqlCommand(updateQuantityQuery, con))
+                {
+                    cmd.Parameters.AddWithValue("@BookId", selectedBookId);
+                    cmd.Parameters.AddWithValue("@Quantity", quantityRequested);
+
+                    cmd.ExecuteNonQuery();
+                }
+
+                MessageBox.Show("Request submitted successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Refresh the DataGridView to reflect updated quantity
+                LoadBooks();
             }
             catch (Exception ex)
             {
@@ -159,6 +374,9 @@ namespace Library
                 }
             }
         }
+
+
+
 
         private void SearchTextBox_TextChanged(object sender, EventArgs e)
         {
@@ -181,6 +399,21 @@ namespace Library
             {
                 dataGridViewBooks.DataSource = null; // Clear DataGridView when no match
             }
+        }
+
+        private void userbook_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

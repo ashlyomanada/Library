@@ -13,7 +13,7 @@ namespace Library
 {
     public partial class RequestedUserBooks : UserControl
     {
-        private string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\renzj\source\repos\Library\Library\library.mdf;Integrated Security=True;Connect Timeout=30";
+        private string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=""C:\Users\Ashly Omanada\source\repos\Library\Library\library.mdf"";Integrated Security=True;Connect Timeout=30;Encrypt=False";
 
         public RequestedUserBooks()
         {
@@ -66,6 +66,11 @@ namespace Library
         }
 
         private void dataGridViewBooks_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void RequestedUserBooks_Load(object sender, EventArgs e)
         {
 
         }
